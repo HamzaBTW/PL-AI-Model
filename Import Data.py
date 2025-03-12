@@ -4,7 +4,7 @@ import os
 from tqdm import tqdm  # For progress bar
 
 # Define the data directory path
-DATA_DIR = r"C:\Users\hamza\Coding\projects\Sport AI Analysis\Data"
+DATA_DIR = ###Use r string and place your folder path to store the databse file
 
 # Create the directory if it doesn't exist
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -30,36 +30,25 @@ for club_name, club_id in tqdm(clubs.items()):
     url = f"https://fbref.com/en/squads/{club_id}/{club_name.replace(' ', '-')}-Stats"
     
     try:
-        # Fetch tables from the club page
+ 
         tables = pd.read_html(url)
         print(f"Found {len(tables)} tables for {club_name}")
-        
-        # Store tables in dictionary
+
         all_data[club_name] = tables
         
-        # Save first table (fixtures) as example
-        # Adjust the index as needed to get different tables
         file_path = os.path.join(DATA_DIR, f"{club_name.lower().replace(' ', '_')}_fixtures.csv")
         tables[1].to_csv(file_path, index=False)
         print(f"Saved fixtures for {club_name} to {file_path}")
         
-        # Pause to avoid overwhelming the server
         time.sleep(2)
         
     except Exception as e:
         print(f"Error fetching data for {club_name}: {e}")
 
-# Example: Access specific table for specific club
-# For example, to access the first table for Liverpool:
-# liverpool_table_1 = all_data['Liverpool'][1]
-
-# Optional: Combine similar tables from different clubs
-# For example, to combine all fixture tables (assuming they're at index 1)
 combined_fixtures = pd.DataFrame()
 
 for club_name, tables in all_data.items():
-    if len(tables) > 1:  # Make sure table exists
-        # Add a column to identify the club
+    if len(tables) > 1:  
         fixtures = tables[1].copy()
         fixtures['Club'] = club_name
         combined_fixtures = pd.concat([combined_fixtures, fixtures])
