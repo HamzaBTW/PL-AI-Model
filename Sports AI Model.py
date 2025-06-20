@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Define the data directory path
-DATA_DIR = r"C:\Users\hamza\Coding\projects\Sport AI Analysis\Data"
+DATA_DIR = ###Use r string and place your folder path to store the databse file
 
 # Load the fixtures data from the specified directory
 fixtures_file_path = os.path.join(DATA_DIR, "all_clubs_fixtures.csv")
