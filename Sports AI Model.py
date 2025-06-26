@@ -5,7 +5,7 @@ import pickle
 import random
 from commentary_templates import get_commentary_template
 
-API_TOKEN = '050be06c781542fea99c07add0f6724e'
+API_TOKEN = 'Your_API_Key'
 headers = {'X-Auth-Token': API_TOKEN}
 
 matches = []
