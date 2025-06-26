@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League AI Predictor</title>
+    <style>
+        body {
+            background: #343541;
+            color: #ececf1;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 480px;
+            margin: 48px auto;
+            background: #444654;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+            padding: 32px 28px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #ececf1;
+            letter-spacing: -1px;
+        }
+        label {
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-size: 1rem;
+            color: #ececf1;
+            font-weight: 500;
+            align-self: flex-start;
+        }
+        select, button {
+            width: 100%;
+            padding: 12px 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        select {
+            background: #343541;
+            color: #ececf1;
+            border: 1px solid #565869;
+            margin-bottom: 18px;
+        }
+        button {
+            background: linear-gradient(90deg, #10a37f 0%, #4fd1c5 100%);
+            color: #fff;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 0;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(16,163,127,0.08);
+            cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #13c08b 0%, #6be2d6 100%);
+        }
+        .result {
+            margin-top: 28px;
+            width: 100%;
+            background: #40414f;
+            border-radius: 12px;
+            padding: 22px 18px;
+            color: #ececf1;
+            font-size: 1.08rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            min-height: 60px;
+            word-break: break-word;
+        }
+        .chat-label {
+            font-size: 0.98rem;
+            color: #a3a3b3;
+            margin-bottom: 2px;
+            font-weight: 400;
+        }
+        @media (max-width: 600px) {
+            .container { max-width: 98vw; padding: 18px 4vw; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Premier League AI Predictor</h1>
+        <form id="predict-form">
+            <label for="venue">Venue</label>
+            <select id="venue" name="venue" required>
+                <option value="Home">Home</option>
+                <option value="Away">Away</option>
+            </select>
+
+            <label for="club">Your Team</label>
+            <select id="club" name="club" required></select>
+
+            <label for="opponent">Opponent Team</label>
+            <select id="opponent" name="opponent" required></select>
+
+            <button type="submit">Predict Outcome</button>
+        </form>
+        <div class="result" id="result" style="display:none;"></div>
+    </div>
+    <script src="predictor.js"></script>
+</body>
+</html>
