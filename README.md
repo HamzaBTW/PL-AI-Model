@@ -1,4 +1,4 @@
-# Sports AI Analysis
+# Premier League AI Predictor
 
 ## What it does
 - Predicts football match outcomes for Premier League teams
