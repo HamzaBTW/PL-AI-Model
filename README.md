@@ -158,10 +158,6 @@ This project is for educational and demonstration purposes.
 4. Test thoroughly
 5. Submit a pull request
 
-## 📞 Support
-
-For questions or issues, please open an issue in the repository.
-
 ---
 
 **Note**: This application uses historical Premier League data for predictions. Results are for entertainment purposes and should not be used for betting or gambling decisions. 
